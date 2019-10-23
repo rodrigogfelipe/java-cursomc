@@ -2,17 +2,25 @@ package com.rodrigofelipe.cursomc.domain;
 
 import java.io.Serializable;
 
-// Serializable obj se transforma em bytes
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+//Entity e uma classe entidade que sera criada no BD
+@Entity
+//Serializable os obj se transformam em bytes
 public class Categoria implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
 
 	// Declarando o construtor padrão
-
 	public Categoria() {
 
 	}
