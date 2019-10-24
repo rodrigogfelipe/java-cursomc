@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 //Entity e uma classe entidade que sera criada no BD
 @Entity
 //Serializable os obj se transformam em bytes
@@ -23,6 +25,7 @@ public class Categoria implements Serializable {
 	private String nome;
 	
 	/*@ManyToMany mapeamento que foi feito na classe Produto de muitos para muitos */
+	@JsonManagedReference
 	@ManyToMany(mappedBy="categorias")
 	private List<Produto> produtos = new ArrayList<>();/* Instanciando o obj lista da classe Produto */
 
