@@ -30,12 +30,10 @@ public class Pedido implements Serializable {
 	private Date instante;
 
 	/* Declarando obj da classe Pagamento */
-	@JsonManagedReference
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "pedido")
 	private Pagamento pagamento;
 
 	/* Declarando obj da classe Cliente */
-	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;

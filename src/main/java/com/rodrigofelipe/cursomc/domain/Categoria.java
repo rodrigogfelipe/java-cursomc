@@ -25,7 +25,6 @@ public class Categoria implements Serializable {
 	private String nome;
 	
 	/*@ManyToMany mapeamento que foi feito na classe Produto de muitos para muitos */
-	@JsonManagedReference
 	@ManyToMany(mappedBy="categorias")
 	private List<Produto> produtos = new ArrayList<>();/* Instanciando o obj lista da classe Produto */
 

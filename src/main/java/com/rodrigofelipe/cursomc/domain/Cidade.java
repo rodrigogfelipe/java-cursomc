@@ -23,7 +23,6 @@ public class Cidade implements Serializable {
 
 	/* Declarando obj da Classe Estado */
 	/* @JoinTable faz o join das duas tabelas cidade - estado_id */
-	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name="estado_id")
 	private Estado estado;
